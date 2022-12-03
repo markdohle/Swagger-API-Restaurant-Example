@@ -1,34 +1,15 @@
-{
-    "swagger": "2.0",
-    "info": {
-        "version": "1.0.0", 
-        "title": "My Restaurant Project CRUD",
-        "description": "My User Project Application API",
-        "license": {
-            "name": "MIT",
-            "url": "https://opensource.org/licenses/MIT"
-        }
-    },
-    "host": "localhost:4000",
-    "basePath": "/",
-    "tags": [
-        {
-            "name": "Restaurants",
-            "description": "API for users in the system"
-        }
-    ],
-    "schemes": [
-        "http"
-    ],
-    "consumes": [
-        "application/json"
-    ],
-    "produces": [
-        "application/json"
-    ],
+Create 3 paths in the swagger.json file.
 
-    "paths": {
-        "/restaurants": {
+```
+"paths": {
+    
+}
+```
+
+1. swagger.json GET
+
+```
+ "/restaurants": {
             "get": {
                 "tags": ["Restaurants"],
                 "summary": "Get all Restaurants in system",
@@ -41,7 +22,12 @@
                     }
                 }
             }
-        },
+        }
+```
+
+2. swagger.json POST
+
+```
         "/restaurant": {
             "post": {
                 "tags": ["Restaurants"],
@@ -68,8 +54,13 @@
                     }
                 }
             }
-        },
-        "/restaurant/{id}": {
+        }
+```
+
+3. swagger.json DELETE
+
+```
+ "/restaurant/{id}": {
             "parameters": [
                 {
                     "name": "id",
@@ -92,23 +83,4 @@
                 }
             }
         }
-    },
-    "definitions": {
-        "Restaurant": {
-            "required": ["id","name"],
-            "properties": {
-                "id": {
-                    "type": "integer",
-                    "uniqueItems": true
-                },
-                "name": {
-                    "type": "string"
-                }
-            }
-        }
-    }
-}
-
-
-
-
+```
